@@ -8,9 +8,6 @@ import { Provider } from 'react-redux'
 
 import AppRouter from './routers/AppRouter'
 import configureStore from './store/configureStore'
-import * as expenses from './actions/expenses'
-// import * as filters from './actions/filters'
-import selector from './selectors/expenses'
 
 import 'normalize.css/normalize.css'
 import './styles/styles.scss'
