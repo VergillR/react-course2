@@ -16,11 +16,11 @@ exports[`should render expense list item with expenses[0] data 1`] = `
   </Link>
   <p>
     Amount: 
-    1800
+    € 18,00
   </p>
   <p>
-    createdAt: 
-    0
+    CreatedAt: 
+    January 1st, 1970
   </p>
 </div>
 `;
