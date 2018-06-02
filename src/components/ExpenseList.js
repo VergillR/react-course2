@@ -2,6 +2,11 @@ import React from 'react'
 import { connect } from 'react-redux'
 import ExpenseListItem from './ExpenseListItem'
 import selectExpenses from '../selectors/expenses'
+import selectTotalExpenses from '../selectors/expenses-total'
+import numeral from 'numeral'
+
+// switch between locales
+numeral.locale('nl')
 
 export const ExpenseList = (props) => (
   <div>
@@ -11,7 +16,8 @@ export const ExpenseList = (props) => (
 
 const mapStateToProps = (state) => {
   return {
-    expenses: selectExpenses(state.expenses, state.filters)
+    expenses: selectExpenses(state.expenses, state.filters),
+    totalExpenses: selectTotalExpenses(state.expenses)
   }
 }
 

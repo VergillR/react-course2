@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should only show valid expenses with alt filters 1`] = `
+<div>
+  <p>
+    Viewing 
+    1
+     
+    expense
+     totalling 
+    € 45,00
+  </p>
+</div>
+`;
+
+exports[`should show all expenses with empty filters 1`] = `
+<div>
+  <p>
+    Viewing 
+    3
+     
+    expenses
+     totalling 
+    € 115,00
+  </p>
+</div>
+`;
