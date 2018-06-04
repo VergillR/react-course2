@@ -8,7 +8,7 @@
     "build-dev": "webpack-cli --mode=development",
     "build-prod": "webpack-cli --mode=production --env=production",
     "dev-server": "webpack-dev-server --mode=development",
-    "test": "jest --config=jest.config.json",
+    "test": "cross-env NODE_ENV=test jest --config=jest.config.json",
     "start": "node server/server.js",
     "heroku-postbuild": "npm run build-prod"
   },
@@ -23,6 +23,7 @@
     "babel-preset-react": "6.24.1",
     "css-loader": "^0.28.11",
     "express": "^4.16.3",
+    "firebase": "^5.0.4",
     "mini-css-extract-plugin": "^0.4.0",
     "moment": "^2.22.2",
     "node-sass": "^4.9.0",
@@ -33,24 +34,28 @@
     "react": "^16.4.0",
     "react-dates": "^16.7.0",
     "react-dom": "^16.4.0",
-    "react-modal": "^3.4.4",
+    "react-modal": "^3.4.5",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
     "redux": "^4.0.0",
-    "sass-loader": "^7.0.1",
+    "redux-thunk": "^2.3.0",
+    "sass-loader": "^7.0.2",
     "style-loader": "^0.21.0",
     "uglifyjs-webpack-plugin": "^1.2.5",
     "uuid": "^3.2.1",
     "validator": "^10.2.0",
     "webpack": "^4.10.2",
-    "webpack-cli": "^2.1.4"
+    "webpack-cli": "^2.1.5"
   },
   "devDependencies": {
+    "cross-env": "^5.1.6",
+    "dotenv": "^6.0.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.3.4",
     "jest": "^23.1.0",
     "react-test-renderer": "^16.4.0",
+    "redux-mock-store": "^1.5.1",
     "webpack-dev-server": "^3.1.4"
   }
 }
