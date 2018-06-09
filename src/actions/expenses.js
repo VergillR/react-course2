@@ -7,6 +7,8 @@ export const addExpense = (expense) => ({
   expense
 })
 
+// startAddExpense does the call to Firebase
+// addExpense does the call to Redux
 export const startAddExpense = (expenseData = {}) => {
   return (dispatch) => {
     const {
@@ -61,10 +63,24 @@ export const startSetExpenses = () => {
   }
 }
 
+// startRemoveExpense does the call to Firebase
+// removeExpense does the call to Redux
 export const startRemoveExpense = (exp = {}) => {
   return (dispatch) => {
     return db.ref(`expenses/${exp.id}`).remove().then(() => {
       dispatch(removeExpense(exp))
+    }).catch((err) => {
+      console.log(err)
+    })
+  }
+}
+
+// startEditExpense does the call to Firebase
+// editExpense does the call to Redux
+export const startEditExpense = (id = '', updates) => {
+  return (dispatch) => {
+    return db.ref(`expenses/${id}`).update(updates).then(() => {
+      dispatch(editExpense(id, updates))
     }).catch((err) => {
       console.log(err)
     })
