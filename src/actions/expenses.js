@@ -60,3 +60,13 @@ export const startSetExpenses = () => {
     })
   }
 }
+
+export const startRemoveExpense = (exp = {}) => {
+  return (dispatch) => {
+    return db.ref(`expenses/${exp.id}`).remove().then(() => {
+      dispatch(removeExpense(exp))
+    }).catch((err) => {
+      console.log(err)
+    })
+  }
+}
